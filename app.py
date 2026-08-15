@@ -15,7 +15,7 @@ def generate_response(prompt):
     history.append(prompt)
     final_prompt="\n".join(history)
     data={
-        "model":"codeguru",
+         "model": "codellama:latest",
          "prompt":final_prompt,
          "stream":False
     }
@@ -36,4 +36,4 @@ interface=gr.Interface(
     inputs=gr.Textbox(lines=4,placeholder="Enter your Prompt"),
     outputs="text"
 )
-interface.launch()
+interface.launch(share=True)
